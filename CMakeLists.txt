@@ -9,7 +9,7 @@ set(CMAKE_CXX_STANDARD 11)
 find_package(GTest REQUIRED PATHS /home/konstantin/Rk2/third-party/gtest)
 include_directories(${GTEST_INCLUDE_DIRS})
 
-# Создание исполняемого файла для тестов
+
 add_executable(tests 
     tests/test_decorator.cpp  # Замените на ваши файлы с тестами
 )
