@@ -1,0 +1,29 @@
+name: Build and Test
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Create build directory
+      run: mkdir build && cd build
+    - name: Configure CMake
+      run: cmake ..
+    - name: Build
+      run: cmake --build .
+    - name: Run tests
+      run: ctest -V
+    - name: Upload artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: executable
+        path: build/flyweight
