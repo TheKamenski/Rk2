@@ -1,10 +1,15 @@
-#include "Decorator.cpp"
 int main()
 {
-    Decorator *decorator = new Decorator();
-    decorator->request();
-
-    delete decorator;
-
-    return 0;
+  ConcreteComponent  *cc = new ConcreteComponent();
+  ConcreteDecoratorB *db = new ConcreteDecoratorB( cc );
+  ConcreteDecoratorA *da = new ConcreteDecoratorA( db );
+  
+  Component *component = da;
+  component->operation();
+  
+  delete da;
+  delete db;
+  delete cc;
+  
+  return 0;
 }
