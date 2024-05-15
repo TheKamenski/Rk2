@@ -29,6 +29,8 @@ endif()
 
 project(my-project CXX)
 
+set(GTEST_ROOT "/home/konstantin/Rk2/third-party/gtest" CACHE PATH "Path to googletest")
+find_package(GTest REQUIRED)
 
 include(FetchContent)
 FetchContent_Declare(
