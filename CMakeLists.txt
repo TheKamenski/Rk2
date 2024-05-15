@@ -21,4 +21,27 @@ target_link_libraries(tests ${GTEST_LIBRARIES} pthread)
 enable_testing()
 add_test(NAME AllTests COMMAND tests)
 
+if(NOT CMAKE_TOOLCHAIN_FILE)
+  set(CMAKE_TOOLCHAIN_FILE
+      "${CMAKE_CURRENT_LIST_DIR}/home/Konstantin/Rk2/vcpkg.cmake"
+      CACHE STRING "" FORCE)
+endif()
+
+project(my-project CXX)
+
+
+include(FetchContent)
+FetchContent_Declare(
+  googletest
+  GIT_REPOSITORY https://github.com/google/googletest.git
+  GIT_TAG release-1.12.1
+)
+FetchContent_GetProperties(googletest)
+if(NOT googletest_POPULATED)
+  FetchContent_Populate(googletest)
+  add_subdirectory(${googletest_SOURCE_DIR} ${googletest_BINARY_DIR} EXCLUDE_FROM_ALL)
+endif()
+
+# Ссылка на GTest
+target_link_libraries(your_target gtest_main gtest)
 
