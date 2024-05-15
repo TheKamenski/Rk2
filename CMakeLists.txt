@@ -6,7 +6,7 @@ project(DecoratorTest)
 set(CMAKE_CXX_STANDARD 11)
 
 # Нахождение Google Test
-find_package(GTest REQUIRED)
+find_package(GTest REQUIRED PATHS /home/konstantin/Rk2/third-party/gtest)
 include_directories(${GTEST_INCLUDE_DIRS})
 
 # Создание исполняемого файла для тестов
@@ -20,4 +20,5 @@ target_link_libraries(tests ${GTEST_LIBRARIES} pthread)
 # Добавление тестов 
 enable_testing()
 add_test(NAME AllTests COMMAND tests)
+
 
