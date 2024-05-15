@@ -1,0 +1,32 @@
+name: Build C++ Executable
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Install g++ compiler
+      run: sudo apt-get update && sudo apt-get install -y g++
+
+    - name: Configure CMake
+      run: cmake -B build
+
+    - name: Build
+      run: cmake --build build
+
+    - name: Upload artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: decorator
+        path: build/decorator
+
+    - name: Run tests
+      run: cd build && ctest
+  
