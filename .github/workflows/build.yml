@@ -26,5 +26,5 @@ jobs:
       run: cmake --build _build
 
     - name: Without tests
-      run: ./_build/MyDecorator
+      run: ./_build/decorator_pattern
   
