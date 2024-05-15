@@ -1,19 +1,23 @@
-cmake_minimum_required(VERSION 3.0)
+cmake_minimum_required(VERSION 3.10)
 
-option(BUILD_TESTS "Build tests" ON)
+project(DecoratorTest)
 
-project(Decorator.cpp)
+# Настройка C++11
+set(CMAKE_CXX_STANDARD 11)
 
-add_executable(Decorator.cpp Decorator.cpp)
+# Нахождение Google Test
+find_package(GTest REQUIRED)
+include_directories(${GTEST_INCLUDE_DIRS})
 
-if(BUILD_TESTS)
-  enable_testing()
-  # Добавление библиотеки Google Test
-  add_subdirectory(third-party/gtest)
-  file(GLOB ${PROJECT_NAME}_TEST_SOURCES tests/*.cpp)
-  # Добавляем исполняемый файл для тестов
-  add_executable(check ${${PROJECT_NAME}_TEST_SOURCES})
-  target_link_libraries(RunTests ${PROJECT_NAME} gtest_main)
-  # Добавляем тесты в проект
-  add_test(NAME RunTests COMMAND RunTests)
-endif()
+# Создание исполняемого файла для тестов
+add_executable(tests 
+    tests/test_decorator.cpp  # Замените на ваши файлы с тестами
+)
+
+# Линковка с Google Test
+target_link_libraries(tests ${GTEST_LIBRARIES} pthread)
+
+# Добавление тестов 
+enable_testing()
+add_test(NAME AllTests COMMAND tests)
+
