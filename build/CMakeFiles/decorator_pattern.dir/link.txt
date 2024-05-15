@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/decorator_pattern.dir/main.cpp.o -o decorator_pattern 
