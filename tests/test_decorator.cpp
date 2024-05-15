@@ -1,21 +1,45 @@
 #include "gtest/gtest.h"
-#include "ConcreteComponent.h"
-#include "ConcreteDecoratorA.h"
-#include "ConcreteDecoratorB.h"
+#include <sstream>
+#include <string>
+#include "/home/konstantin/Rk2/decorator/Decorator.cpp" 
 
+// Тест для ConcreteComponent
 TEST(DecoratorTest, ConcreteComponentOperation) {
   ConcreteComponent component;
-  EXPECT_EQ(component.Operation(), "ConcreteComponent");
+  std::stringstream ss;
+  std::streambuf * oldCout = std::cout.rdbuf();
+  std::cout.rdbuf(ss.rdbuf());
+
+  component.operation();
+
+  std::cout.rdbuf(oldCout);
+  EXPECT_EQ(ss.str(), "Concrete Component operation\n");
 }
 
+// Тест для ConcreteDecoratorA
 TEST(DecoratorTest, ConcreteDecoratorAOperation) {
   ConcreteComponent component;
   ConcreteDecoratorA decoratorA(&component);
-  EXPECT_EQ(decoratorA.Operation(), "ConcreteDecoratorA(ConcreteComponent)");
+  std::stringstream ss;
+  std::streambuf * oldCout = std::cout.rdbuf();
+  std::cout.rdbuf(ss.rdbuf());
+
+  decoratorA.operation();
+
+  std::cout.rdbuf(oldCout);
+  EXPECT_EQ(ss.str(), "Concrete Component operation\nDecorator A\n");
 }
 
+// Тест для ConcreteDecoratorB
 TEST(DecoratorTest, ConcreteDecoratorBOperation) {
   ConcreteComponent component;
   ConcreteDecoratorB decoratorB(&component);
-  EXPECT_EQ(decoratorB.Operation(), "ConcreteDecoratorB(ConcreteComponent)");
+  std::stringstream ss;
+  std::streambuf * oldCout = std::cout.rdbuf();
+  std::cout.rdbuf(ss.rdbuf());
+
+  decoratorB.operation();
+
+  std::cout.rdbuf(oldCout);
+  EXPECT_EQ(ss.str(), "Concrete Component operation\nDecorator B\n");
 }
