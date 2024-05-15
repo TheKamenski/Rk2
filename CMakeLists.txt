@@ -4,11 +4,7 @@ option(BUILD_TESTS "Build tests" ON)
 
 project(Decorator.cpp)
 
-# Добавляем исполняемый файл для ClassAdapter.cpp
 add_executable(Decorator.cpp Decorator.cpp)
-
-# Добавляем исполняемый файл для ObjectAdapter.cpp
-add_executable(ObjectAdapter adapter/ObjectAdapter.cpp)
 
 if(BUILD_TESTS)
   enable_testing()
