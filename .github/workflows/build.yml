@@ -25,6 +25,5 @@ jobs:
     - name: Build
       run: cmake --build _build
 
-    - name: Without tests
-      run: ./_build/decorator_pattern
-  
+     - name: Start tests
+      run: ./_build/check
