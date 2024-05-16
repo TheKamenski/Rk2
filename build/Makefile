@@ -117,41 +117,41 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named decorator_pattern
+# Target rules for targets named MyProject
 
 # Build rule for target.
-decorator_pattern: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 decorator_pattern
-.PHONY : decorator_pattern
+MyProject: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 MyProject
+.PHONY : MyProject
 
 # fast build rule for target.
-decorator_pattern/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/decorator_pattern.dir/build.make CMakeFiles/decorator_pattern.dir/build
-.PHONY : decorator_pattern/fast
+MyProject/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyProject.dir/build.make CMakeFiles/MyProject.dir/build
+.PHONY : MyProject/fast
 
-main.o: main.cpp.o
-.PHONY : main.o
+builder.o: builder.cpp.o
+.PHONY : builder.o
 
 # target to build an object file
-main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/decorator_pattern.dir/build.make CMakeFiles/decorator_pattern.dir/main.cpp.o
-.PHONY : main.cpp.o
+builder.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyProject.dir/build.make CMakeFiles/MyProject.dir/builder.cpp.o
+.PHONY : builder.cpp.o
 
-main.i: main.cpp.i
-.PHONY : main.i
+builder.i: builder.cpp.i
+.PHONY : builder.i
 
 # target to preprocess a source file
-main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/decorator_pattern.dir/build.make CMakeFiles/decorator_pattern.dir/main.cpp.i
-.PHONY : main.cpp.i
+builder.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyProject.dir/build.make CMakeFiles/MyProject.dir/builder.cpp.i
+.PHONY : builder.cpp.i
 
-main.s: main.cpp.s
-.PHONY : main.s
+builder.s: builder.cpp.s
+.PHONY : builder.s
 
 # target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/decorator_pattern.dir/build.make CMakeFiles/decorator_pattern.dir/main.cpp.s
-.PHONY : main.cpp.s
+builder.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyProject.dir/build.make CMakeFiles/MyProject.dir/builder.cpp.s
+.PHONY : builder.cpp.s
 
 # Help Target
 help:
@@ -161,10 +161,10 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... decorator_pattern"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
+	@echo "... MyProject"
+	@echo "... builder.o"
+	@echo "... builder.i"
+	@echo "... builder.s"
 .PHONY : help
 
 

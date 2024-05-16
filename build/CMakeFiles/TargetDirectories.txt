@@ -1,3 +1,3 @@
-/home/konstantin/Rk2/build/CMakeFiles/decorator_pattern.dir
+/home/konstantin/Rk2/build/CMakeFiles/MyProject.dir
 /home/konstantin/Rk2/build/CMakeFiles/edit_cache.dir
 /home/konstantin/Rk2/build/CMakeFiles/rebuild_cache.dir

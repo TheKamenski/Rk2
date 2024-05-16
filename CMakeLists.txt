@@ -1,13 +1,15 @@
-
-
-
 cmake_minimum_required(VERSION 3.10)
 
-project(Decorator_Pattern)
+project(MyProject)
 
-set(CMAKE_CXX_STANDARD 11)
+add_executable(MyProject builder.cpp)
 
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
-
-add_executable(decorator_pattern main.cpp)
+if(BUILD_TESTS)
+  enable_testing()
+  add_subdirectory(third-party/gtest)
+  file(GLOB ${Project}_TEST_SOURCES tests/*.cpp)
+  add_executable(check ${${Project}_TEST_SOURCES})
+  target_link_libraries(check ${Project} gtest_main)
+  add_test(NAME check COMMAND check)
+endif()
 
