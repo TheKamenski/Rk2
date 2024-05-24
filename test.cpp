@@ -2,7 +2,7 @@
 #include <sstream>
 #include <string>
 
-#include "./../Decorator.cpp" //  Подключите ваш заголовочный файл с классами
+#include "builder.cpp" //  Подключите ваш заголовочный файл с классами
 
 // Тест для ConcreteComponent
 TEST(DecoratorTest, ConcreteComponentOperation) {
