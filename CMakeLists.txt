@@ -4,7 +4,7 @@ cmake_minimum_required(VERSION 3.10)
 project(MyProject)
 
 # Устанавливаем исполняемый файл
-add_executable(main main.cpp)
+add_executable(builder builder.cpp)
 
 # Добавляем исполняемый файл для тестов
 add_executable(tests test.cpp)
