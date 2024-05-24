@@ -14,6 +14,7 @@ target_link_libraries(tests PRIVATE Catch2::Catch2)
 # Добавьте тесты как цель для сборки
 enable_testing()
 
+set(Catch2_DIR ~/Catch2)
 # Добавьте тесты в CMake
 add_test(NAME MyTest COMMAND test)
 add_executable(MyProject builder.cpp)
