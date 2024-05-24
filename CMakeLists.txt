@@ -9,6 +9,9 @@ add_executable(builder builder.cpp)
 # Добавляем исполняемый файл для тестов
 add_executable(tests test.cpp)
 
+# Подключаем библиотеку Catch2
+find_package(Catch2 REQUIRED)
+
 # Добавляем библиотеку для тестов
 target_link_libraries(tests PRIVATE Catch2::Catch2)
 
