@@ -12,4 +12,13 @@ if(BUILD_TESTS)
   target_link_libraries(check ${Project} gtest_main)
   add_test(NAME check COMMAND check)
 endif()
+# Добавляем исполняемый файл для тестов
+add_executable(mainTest test.cpp Singleton.cpp)
+
+# Добавляем тесты с использованием CTest
+enable_testing()
+
+# Добавляем тестовый случай
+add_test(NAME mainTest COMMAND mainTest)
+
 
