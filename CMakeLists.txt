@@ -1,22 +1,15 @@
 cmake_minimum_required(VERSION 3.10)
 
-# Устанавливаем имя проекта
 project(MyProject)
 
-# Устанавливаем исполняемый файл
-add_executable(builder builder.cpp)
+add_executable(MyProject builder.cpp)
 
-# Добавляем исполняемый файл для тестов
-add_executable(tests test.cpp)
+if(BUILD_TESTS)
+  enable_testing()
+  add_subdirectory(third-party/gtest)
+  file(GLOB ${Project}_TEST_SOURCES tests/*.cpp)
+  add_executable(check ${${Project}_TEST_SOURCES})
+  target_link_libraries(check ${Project} gtest_main)
+  add_test(NAME check COMMAND check)
+endif()
 
-# Подключаем библиотеку Catch2
-find_package(Catch2 REQUIRED)
-
-# Добавляем библиотеку для тестов
-target_link_libraries(tests PRIVATE Catch2::Catch2)
-
-# Добавляем тесты как цель для сборки
-enable_testing()
-
-# Добавляем тесты в CMake
-add_test(NAME MyTest COMMAND tests)
