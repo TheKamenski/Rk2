@@ -1,11 +1,22 @@
-cmake_minimum_required(VERSION3.10)
-project(decorator_pattern)
+# CMakeLists.txt
 
-set(CMAKE_CXX_STANDARD14)
+cmake_minimum_required(VERSION 3.10)
 
-add_executable(decorator main.cpp)
+# Название проекта
+project(FacadePattern)
 
-add_executable(decorator main.cpp)
-add_executable(decorator_test tests/decorator_test.cpp)
-target_link_libraries(decorator_test gtest)
+# Установить стандарт C++
+set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD_REQUIRED True)
 
+# Добавить исходные файлы
+add_executable(FacadePattern src/main.cpp)
+
+# Добавить тесты
+enable_testing()
+include_directories(${GTEST_INCLUDE_DIRS})
+
+add_executable(FacadePatternTest tests/test_facade.cpp)
+target_link_libraries(FacadePatternTest ${GTEST_LIBRARIES} pthread)
+
+add_test(NAME FacadePatternTest COMMAND FacadePatternTest)
