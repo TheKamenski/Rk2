@@ -1,86 +1,53 @@
 #include <iostream>
+#include <cassert>
+#include <sstream>
 
-class SubsystemA
-{
-public:
-  void suboperation() { std::cout << "Subsystem A method" << std::endl; }
-};
+// Предыдущий код классов остается без изменений
 
-class SubsystemB
-{
-public:
-  void suboperation() { std::cout << "Subsystem B method" << std::endl; }
-};
+// Тестовая функция для проверки ConcreteComponent
+void test_concrete_component() {
+    ConcreteComponent cc;
+    std::stringstream ss;
+    std::streambuf* oldCoutBuffer = std::cout.rdbuf(ss.rdbuf());
 
-class SubsystemC
-{
-public:
-  void suboperation() { std::cout << "Subsystem C method" << std::endl; }
-};
+    cc.operation();
 
-class Facade
-{
-public:
-  Facade() : subsystemA(new SubsystemA()), subsystemB(new SubsystemB()), subsystemC(new SubsystemC()) {}
-  ~Facade()
-  {
-    delete subsystemA;
-    delete subsystemB;
-    delete subsystemC;
-  }
-
-  void operation1()
-  {
-    subsystemA->suboperation();
-    subsystemB->suboperation();
-  }
-
-  void operation2()
-  {
-    subsystemC->suboperation();
-  }
-
-private:
-  SubsystemA *subsystemA;
-  SubsystemB *subsystemB;
-  SubsystemC *subsystemC;
-};
-
-
-void testOperation1()
-{
-  std::cout << "Running Operation 1 test..." << std::endl;
-  Facade facade;
-  facade.operation1(); 
-  std::cout << "Operation 1 test completed" << std::endl;
+    std::cout.rdbuf(oldCoutBuffer);
+    assert(ss.str() == "Concrete Component operation\n");
 }
 
-void testOperation2()
-{
-  std::cout << "Running Operation 2 test..." << std::endl;
-  Facade facade;
-  facade.operation2(); 
-  std::cout << "Operation 2 test completed" << std::endl;
-}
-void testCombinedOperations()
-{
-  std::cout << "Running Combined Operations test..." << std::endl;
-  Facade facade;
-  facade.operation1(); 
-  facade.operation2(); 
-  std::cout << "Combined Operations test completed" << std::endl;
+// Тестовая функция для проверки ConcreteDecoratorA
+void test_concrete_decorator_a() {
+    ConcreteComponent cc;
+    ConcreteDecoratorA da(&cc);
+    std::stringstream ss;
+    std::streambuf* oldCoutBuffer = std::cout.rdbuf(ss.rdbuf());
+
+    da.operation();
+
+    std::cout.rdbuf(oldCoutBuffer);
+    assert(ss.str() == "Concrete Component operation\nDecorator A\n");
 }
 
-// Функция для запуска всех тестов
-void runTests()
-{
-  testOperation1();
-  testOperation2();
-  testCombinedOperations(); }
+// Тестовая функция для проверки ConcreteDecoratorB
+void test_concrete_decorator_b() {
+    ConcreteComponent cc;
+    ConcreteDecoratorB db(&cc);
+    std::stringstream ss;
+    std::streambuf* oldCoutBuffer = std::cout.rdbuf(ss.rdbuf());
 
+    db.operation();
 
-int main()
-{
-  runTests(); 
-  return 0;
+    std::cout.rdbuf(oldCoutBuffer);
+    assert(ss.str() == "Concrete Component operation\nDecorator B\n");
 }
+
+int main() {
+    test_concrete_component();
+    test_concrete_decorator_a();
+    test_concrete_decorator_b();
+
+    std::cout << "All tests passed!" << std::endl;
+    return0;
+}
+

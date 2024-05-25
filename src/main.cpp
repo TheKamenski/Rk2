@@ -1,99 +1,100 @@
-// main.cpp
-
-/*
- * C++ Design Patterns: Facade
- * Author: Jakub Vojvoda [github.com/JakubVojvoda]
- * 2016
- *
- * Source code is licensed under MIT License
- * (for more details see LICENSE)
- *
- */
-
 #include <iostream>
 
 /*
- * Subsystems
- * implement more complex subsystem functionality
- * and have no knowledge of the facade
+ * Component
+ * defines an interface for objects that can have responsibilities
+ * added to them dynamically
  */
-class SubsystemA
+class Component
 {
 public:
-  void suboperation()
-  {
-    std::cout << "Subsystem A method" << std::endl;
-    // ...
-  }
+  virtual ~Component() {}
+  
+  virtual void operation() = 0;
   // ...
 };
 
-class SubsystemB
+/*
+ * Concrete Component
+ * defines an object to which additional responsibilities
+ * can be attached
+ */
+class ConcreteComponent : public Component
 {
 public:
-  void suboperation()
+  ~ConcreteComponent() {}
+  
+  void operation() override
   {
-    std::cout << "Subsystem B method" << std::endl;
-    // ...
-  }
-  // ...
-};
-
-class SubsystemC
-{
-public:
-  void suboperation()
-  {
-    std::cout << "Subsystem C method" << std::endl;
-    // ...
+    std::cout << "Concrete Component operation" << std::endl;
   }
   // ...
 };
 
 /*
- * Facade
- * delegates client requests to appropriate subsystem object
- * and unified interface that is easier to use
+ * Decorator
+ * maintains a reference to a Component object and defines an interface
+ * that conforms to Component's interface
  */
-class Facade
+class Decorator : public Component
 {
 public:
-  Facade() : subsystemA(new SubsystemA()), subsystemB(new SubsystemB()), subsystemC(new SubsystemC()) {}
-  ~Facade() {
-    delete subsystemA;
-    delete subsystemB;
-    delete subsystemC;
-  }
+  ~Decorator() {}
   
-  void operation1()
-  {
-    subsystemA->suboperation();
-    subsystemB->suboperation();
-    // ...
-  }
+  Decorator( Component *c ) : component( c ) {}
   
-  void operation2()
+  virtual void operation() override
   {
-    subsystemC->suboperation();
-    // ...
+    component->operation();
   }
   // ...
-  
+
 private:
-  SubsystemA *subsystemA;
-  SubsystemB *subsystemB;
-  SubsystemC *subsystemC;
+  Component *component;
+};
+
+/*
+ * Concrete Decorators
+ * add responsibilities to the component (can extend the state
+ * of the component)
+ */
+class ConcreteDecoratorA : public Decorator
+{
+public:
+  ConcreteDecoratorA( Component *c ) : Decorator( c ) {}
+  
+  void operation() override
+  {
+    Decorator::operation();
+    std::cout << "Decorator A" << std::endl;
+  }
   // ...
 };
 
+class ConcreteDecoratorB : public Decorator
+{
+public:
+  ConcreteDecoratorB( Component *c ) : Decorator( c ) {}
+  
+  void operation() override
+  {
+    Decorator::operation();
+    std::cout << "Decorator B" << std::endl;
+  }
+  // ...
+};
 
 int main()
 {
-  Facade *facade = new Facade();
+  ConcreteComponent *c = new ConcreteComponent;
+  ConcreteDecoratorA *d1 = new ConcreteDecoratorA( c );
+  ConcreteDecoratorB *d2 = new ConcreteDecoratorB( d1 );
   
-  facade->operation1();
-  facade->operation2();
-  delete facade;
+  d2->operation();
+  
+  delete d2;
+  delete d1;
+  delete c;
   
   return 0;
 }
