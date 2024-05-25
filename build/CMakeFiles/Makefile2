@@ -54,16 +54,17 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/eikatkoff/cpp-facade-pattern
+CMAKE_SOURCE_DIR = /home/konstantin/decorator-pattern-cpp
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/eikatkoff/cpp-facade-pattern/build
+CMAKE_BINARY_DIR = /home/konstantin/decorator-pattern-cpp/build
 
 #=============================================================================
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
 all: CMakeFiles/FacadePattern.dir/all
+all: CMakeFiles/FacadePatternTest.dir/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
@@ -72,6 +73,7 @@ preinstall:
 
 # The main recursive "clean" target.
 clean: CMakeFiles/FacadePattern.dir/clean
+clean: CMakeFiles/FacadePatternTest.dir/clean
 .PHONY : clean
 
 #=============================================================================
@@ -81,14 +83,14 @@ clean: CMakeFiles/FacadePattern.dir/clean
 CMakeFiles/FacadePattern.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/FacadePattern.dir/build.make CMakeFiles/FacadePattern.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/FacadePattern.dir/build.make CMakeFiles/FacadePattern.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/eikatkoff/cpp-facade-pattern/build/CMakeFiles --progress-num=1,2 "Built target FacadePattern"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/konstantin/decorator-pattern-cpp/build/CMakeFiles --progress-num=1,2 "Built target FacadePattern"
 .PHONY : CMakeFiles/FacadePattern.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/FacadePattern.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/eikatkoff/cpp-facade-pattern/build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/konstantin/decorator-pattern-cpp/build/CMakeFiles 2
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/FacadePattern.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/eikatkoff/cpp-facade-pattern/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/konstantin/decorator-pattern-cpp/build/CMakeFiles 0
 .PHONY : CMakeFiles/FacadePattern.dir/rule
 
 # Convenience name for target.
@@ -99,6 +101,32 @@ FacadePattern: CMakeFiles/FacadePattern.dir/rule
 CMakeFiles/FacadePattern.dir/clean:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/FacadePattern.dir/build.make CMakeFiles/FacadePattern.dir/clean
 .PHONY : CMakeFiles/FacadePattern.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/FacadePatternTest.dir
+
+# All Build rule for target.
+CMakeFiles/FacadePatternTest.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/FacadePatternTest.dir/build.make CMakeFiles/FacadePatternTest.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/FacadePatternTest.dir/build.make CMakeFiles/FacadePatternTest.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/konstantin/decorator-pattern-cpp/build/CMakeFiles --progress-num=3,4 "Built target FacadePatternTest"
+.PHONY : CMakeFiles/FacadePatternTest.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/FacadePatternTest.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/konstantin/decorator-pattern-cpp/build/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/FacadePatternTest.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/konstantin/decorator-pattern-cpp/build/CMakeFiles 0
+.PHONY : CMakeFiles/FacadePatternTest.dir/rule
+
+# Convenience name for target.
+FacadePatternTest: CMakeFiles/FacadePatternTest.dir/rule
+.PHONY : FacadePatternTest
+
+# clean rule for target.
+CMakeFiles/FacadePatternTest.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/FacadePatternTest.dir/build.make CMakeFiles/FacadePatternTest.dir/clean
+.PHONY : CMakeFiles/FacadePatternTest.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

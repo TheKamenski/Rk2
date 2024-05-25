@@ -57,13 +57,23 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/eikatkoff/cpp-facade-pattern
+CMAKE_SOURCE_DIR = /home/konstantin/decorator-pattern-cpp
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/eikatkoff/cpp-facade-pattern/build
+CMAKE_BINARY_DIR = /home/konstantin/decorator-pattern-cpp/build
 
 #=============================================================================
 # Targets provided globally by CMake.
+
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+.PHONY : test/fast
 
 # Special rule for the target edit_cache
 edit_cache:
@@ -87,9 +97,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/eikatkoff/cpp-facade-pattern/build/CMakeFiles /home/eikatkoff/cpp-facade-pattern/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/konstantin/decorator-pattern-cpp/build/CMakeFiles /home/konstantin/decorator-pattern-cpp/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/eikatkoff/cpp-facade-pattern/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/konstantin/decorator-pattern-cpp/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -129,6 +139,19 @@ FacadePattern/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/FacadePattern.dir/build.make CMakeFiles/FacadePattern.dir/build
 .PHONY : FacadePattern/fast
 
+#=============================================================================
+# Target rules for targets named FacadePatternTest
+
+# Build rule for target.
+FacadePatternTest: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 FacadePatternTest
+.PHONY : FacadePatternTest
+
+# fast build rule for target.
+FacadePatternTest/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/FacadePatternTest.dir/build.make CMakeFiles/FacadePatternTest.dir/build
+.PHONY : FacadePatternTest/fast
+
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
 
@@ -153,6 +176,30 @@ src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/FacadePattern.dir/build.make CMakeFiles/FacadePattern.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+tests/test_facade.o: tests/test_facade.cpp.o
+.PHONY : tests/test_facade.o
+
+# target to build an object file
+tests/test_facade.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/FacadePatternTest.dir/build.make CMakeFiles/FacadePatternTest.dir/tests/test_facade.cpp.o
+.PHONY : tests/test_facade.cpp.o
+
+tests/test_facade.i: tests/test_facade.cpp.i
+.PHONY : tests/test_facade.i
+
+# target to preprocess a source file
+tests/test_facade.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/FacadePatternTest.dir/build.make CMakeFiles/FacadePatternTest.dir/tests/test_facade.cpp.i
+.PHONY : tests/test_facade.cpp.i
+
+tests/test_facade.s: tests/test_facade.cpp.s
+.PHONY : tests/test_facade.s
+
+# target to generate assembly for a file
+tests/test_facade.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/FacadePatternTest.dir/build.make CMakeFiles/FacadePatternTest.dir/tests/test_facade.cpp.s
+.PHONY : tests/test_facade.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -161,10 +208,15 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... test"
 	@echo "... FacadePattern"
+	@echo "... FacadePatternTest"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... tests/test_facade.o"
+	@echo "... tests/test_facade.i"
+	@echo "... tests/test_facade.s"
 .PHONY : help
 
 
