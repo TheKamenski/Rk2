@@ -1,1 +1,0 @@
-/usr/bin/c++ CMakeFiles/FacadePatternTest.dir/tests/test_facade.cpp.o -o FacadePatternTest  -lpthread 

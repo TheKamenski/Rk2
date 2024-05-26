@@ -1,22 +1,15 @@
-# CMakeLists.txt
-
 cmake_minimum_required(VERSION 3.10)
 
-# Название проекта
-project(FacadePattern)
+project(MyProject)
 
-# Установить стандарт C++
-set(CMAKE_CXX_STANDARD 11)
-set(CMAKE_CXX_STANDARD_REQUIRED True)
+add_executable(MyProject builder.cpp)
 
-# Добавить исходные файлы
-add_executable(FacadePattern src/main.cpp)
+if(BUILD_TESTS)
+  enable_testing()
+  add_subdirectory(third-party/gtest)
+  file(GLOB ${Project}_TEST_SOURCES tests/*.cpp)
+  add_executable(check ${${Project}_TEST_SOURCES})
+  target_link_libraries(check ${Project} gtest_main)
+  add_test(NAME check COMMAND check)
+endif()
 
-# Добавить тесты
-enable_testing()
-include_directories(${GTEST_INCLUDE_DIRS})
-
-add_executable(FacadePatternTest tests/test_facade.cpp)
-target_link_libraries(FacadePatternTest ${GTEST_LIBRARIES} pthread)
-
-add_test(NAME FacadePatternTest COMMAND FacadePatternTest)
