@@ -125,4 +125,5 @@ set(CMAKE_MAKEFILE_PRODUCTS
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/DecoratorPattern.dir/DependInfo.cmake"
+  "CMakeFiles/DecoratorPatternTest.dir/DependInfo.cmake"
   )
