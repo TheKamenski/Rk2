@@ -13,10 +13,10 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 add_executable(DecoratorPattern main.cpp)
 
  #Добавить тесты
-#enable_testing()
-#include_directories(${GTEST_INCLUDE_DIRS})
+enable_testing()
+include_directories(${GTEST_INCLUDE_DIRS})
 
-#add_executable(DecoratorPatternTest tests/test_decorator.cpp)
-#target_link_libraries(DecoratorPatternTest ${GTEST_LIBRARIES} pthread)
+add_executable(DecoratorPatternTest test_decorator.cpp)
+target_link_libraries(DecoratorPatternTest ${GTEST_LIBRARIES} pthread)
 
-#add_test(NAME DecoratorPatternTest COMMAND DecoratorPatternTest)
+add_test(NAME DecoratorPatternTest COMMAND DecoratorPatternTest)
