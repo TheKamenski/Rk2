@@ -1,3 +1,0 @@
-/home/konstantin/Rk2/CMakeFiles/MyProject.dir
-/home/konstantin/Rk2/CMakeFiles/edit_cache.dir
-/home/konstantin/Rk2/CMakeFiles/rebuild_cache.dir
