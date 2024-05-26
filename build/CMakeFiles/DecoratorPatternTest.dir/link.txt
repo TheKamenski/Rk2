@@ -1,1 +1,0 @@
-/usr/bin/c++ CMakeFiles/DecoratorPatternTest.dir/tests/test_decorator.cpp.o -o DecoratorPatternTest  -lpthread 

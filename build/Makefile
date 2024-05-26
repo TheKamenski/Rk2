@@ -57,23 +57,13 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/konstantin/decorator-pattern-cpp
+CMAKE_SOURCE_DIR = /home/konstantin/decorator-pattern-cpp/src
 
 # The top-level build directory on which CMake was run.
 CMAKE_BINARY_DIR = /home/konstantin/decorator-pattern-cpp/build
 
 #=============================================================================
 # Targets provided globally by CMake.
-
-# Special rule for the target test
-test:
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running tests..."
-	/usr/bin/ctest --force-new-ctest-process $(ARGS)
-.PHONY : test
-
-# Special rule for the target test
-test/fast: test
-.PHONY : test/fast
 
 # Special rule for the target edit_cache
 edit_cache:
@@ -139,66 +129,29 @@ DecoratorPattern/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/DecoratorPattern.dir/build.make CMakeFiles/DecoratorPattern.dir/build
 .PHONY : DecoratorPattern/fast
 
-#=============================================================================
-# Target rules for targets named DecoratorPatternTest
-
-# Build rule for target.
-DecoratorPatternTest: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 DecoratorPatternTest
-.PHONY : DecoratorPatternTest
-
-# fast build rule for target.
-DecoratorPatternTest/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/DecoratorPatternTest.dir/build.make CMakeFiles/DecoratorPatternTest.dir/build
-.PHONY : DecoratorPatternTest/fast
-
-src/main.o: src/main.cpp.o
-.PHONY : src/main.o
+main.o: main.cpp.o
+.PHONY : main.o
 
 # target to build an object file
-src/main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/DecoratorPattern.dir/build.make CMakeFiles/DecoratorPattern.dir/src/main.cpp.o
-.PHONY : src/main.cpp.o
+main.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DecoratorPattern.dir/build.make CMakeFiles/DecoratorPattern.dir/main.cpp.o
+.PHONY : main.cpp.o
 
-src/main.i: src/main.cpp.i
-.PHONY : src/main.i
-
-# target to preprocess a source file
-src/main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/DecoratorPattern.dir/build.make CMakeFiles/DecoratorPattern.dir/src/main.cpp.i
-.PHONY : src/main.cpp.i
-
-src/main.s: src/main.cpp.s
-.PHONY : src/main.s
-
-# target to generate assembly for a file
-src/main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/DecoratorPattern.dir/build.make CMakeFiles/DecoratorPattern.dir/src/main.cpp.s
-.PHONY : src/main.cpp.s
-
-tests/test_decorator.o: tests/test_decorator.cpp.o
-.PHONY : tests/test_decorator.o
-
-# target to build an object file
-tests/test_decorator.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/DecoratorPatternTest.dir/build.make CMakeFiles/DecoratorPatternTest.dir/tests/test_decorator.cpp.o
-.PHONY : tests/test_decorator.cpp.o
-
-tests/test_decorator.i: tests/test_decorator.cpp.i
-.PHONY : tests/test_decorator.i
+main.i: main.cpp.i
+.PHONY : main.i
 
 # target to preprocess a source file
-tests/test_decorator.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/DecoratorPatternTest.dir/build.make CMakeFiles/DecoratorPatternTest.dir/tests/test_decorator.cpp.i
-.PHONY : tests/test_decorator.cpp.i
+main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DecoratorPattern.dir/build.make CMakeFiles/DecoratorPattern.dir/main.cpp.i
+.PHONY : main.cpp.i
 
-tests/test_decorator.s: tests/test_decorator.cpp.s
-.PHONY : tests/test_decorator.s
+main.s: main.cpp.s
+.PHONY : main.s
 
 # target to generate assembly for a file
-tests/test_decorator.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/DecoratorPatternTest.dir/build.make CMakeFiles/DecoratorPatternTest.dir/tests/test_decorator.cpp.s
-.PHONY : tests/test_decorator.cpp.s
+main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DecoratorPattern.dir/build.make CMakeFiles/DecoratorPattern.dir/main.cpp.s
+.PHONY : main.cpp.s
 
 # Help Target
 help:
@@ -208,15 +161,10 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... test"
 	@echo "... DecoratorPattern"
-	@echo "... DecoratorPatternTest"
-	@echo "... src/main.o"
-	@echo "... src/main.i"
-	@echo "... src/main.s"
-	@echo "... tests/test_decorator.o"
-	@echo "... tests/test_decorator.i"
-	@echo "... tests/test_decorator.s"
+	@echo "... main.o"
+	@echo "... main.i"
+	@echo "... main.s"
 .PHONY : help
 
 

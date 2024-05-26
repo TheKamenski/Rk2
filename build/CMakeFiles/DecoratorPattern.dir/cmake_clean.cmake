@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/DecoratorPattern.dir/src/main.cpp.o"
-  "CMakeFiles/DecoratorPattern.dir/src/main.cpp.o.d"
+  "CMakeFiles/DecoratorPattern.dir/main.cpp.o"
+  "CMakeFiles/DecoratorPattern.dir/main.cpp.o.d"
   "DecoratorPattern"
   "DecoratorPattern.pdb"
 )

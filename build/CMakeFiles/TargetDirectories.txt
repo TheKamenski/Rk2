@@ -1,5 +1,3 @@
 /home/konstantin/decorator-pattern-cpp/build/CMakeFiles/DecoratorPattern.dir
-/home/konstantin/decorator-pattern-cpp/build/CMakeFiles/DecoratorPatternTest.dir
-/home/konstantin/decorator-pattern-cpp/build/CMakeFiles/test.dir
 /home/konstantin/decorator-pattern-cpp/build/CMakeFiles/edit_cache.dir
 /home/konstantin/decorator-pattern-cpp/build/CMakeFiles/rebuild_cache.dir

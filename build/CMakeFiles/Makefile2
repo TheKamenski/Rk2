@@ -54,7 +54,7 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/konstantin/decorator-pattern-cpp
+CMAKE_SOURCE_DIR = /home/konstantin/decorator-pattern-cpp/src
 
 # The top-level build directory on which CMake was run.
 CMAKE_BINARY_DIR = /home/konstantin/decorator-pattern-cpp/build
@@ -64,7 +64,6 @@ CMAKE_BINARY_DIR = /home/konstantin/decorator-pattern-cpp/build
 
 # The main recursive "all" target.
 all: CMakeFiles/DecoratorPattern.dir/all
-all: CMakeFiles/DecoratorPatternTest.dir/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
@@ -73,7 +72,6 @@ preinstall:
 
 # The main recursive "clean" target.
 clean: CMakeFiles/DecoratorPattern.dir/clean
-clean: CMakeFiles/DecoratorPatternTest.dir/clean
 .PHONY : clean
 
 #=============================================================================
@@ -101,32 +99,6 @@ DecoratorPattern: CMakeFiles/DecoratorPattern.dir/rule
 CMakeFiles/DecoratorPattern.dir/clean:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/DecoratorPattern.dir/build.make CMakeFiles/DecoratorPattern.dir/clean
 .PHONY : CMakeFiles/DecoratorPattern.dir/clean
-
-#=============================================================================
-# Target rules for target CMakeFiles/DecoratorPatternTest.dir
-
-# All Build rule for target.
-CMakeFiles/DecoratorPatternTest.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/DecoratorPatternTest.dir/build.make CMakeFiles/DecoratorPatternTest.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/DecoratorPatternTest.dir/build.make CMakeFiles/DecoratorPatternTest.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/konstantin/decorator-pattern-cpp/build/CMakeFiles --progress-num=3,4 "Built target DecoratorPatternTest"
-.PHONY : CMakeFiles/DecoratorPatternTest.dir/all
-
-# Build rule for subdir invocation for target.
-CMakeFiles/DecoratorPatternTest.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/konstantin/decorator-pattern-cpp/build/CMakeFiles 2
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/DecoratorPatternTest.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/konstantin/decorator-pattern-cpp/build/CMakeFiles 0
-.PHONY : CMakeFiles/DecoratorPatternTest.dir/rule
-
-# Convenience name for target.
-DecoratorPatternTest: CMakeFiles/DecoratorPatternTest.dir/rule
-.PHONY : DecoratorPatternTest
-
-# clean rule for target.
-CMakeFiles/DecoratorPatternTest.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/DecoratorPatternTest.dir/build.make CMakeFiles/DecoratorPatternTest.dir/clean
-.PHONY : CMakeFiles/DecoratorPatternTest.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

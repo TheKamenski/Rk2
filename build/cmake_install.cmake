@@ -1,4 +1,4 @@
-# Install script for directory: /home/konstantin/decorator-pattern-cpp
+# Install script for directory: /home/konstantin/decorator-pattern-cpp/src
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

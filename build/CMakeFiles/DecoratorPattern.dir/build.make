@@ -53,7 +53,7 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/konstantin/decorator-pattern-cpp
+CMAKE_SOURCE_DIR = /home/konstantin/decorator-pattern-cpp/src
 
 # The top-level build directory on which CMake was run.
 CMAKE_BINARY_DIR = /home/konstantin/decorator-pattern-cpp/build
@@ -69,28 +69,28 @@ include CMakeFiles/DecoratorPattern.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/DecoratorPattern.dir/flags.make
 
-CMakeFiles/DecoratorPattern.dir/src/main.cpp.o: CMakeFiles/DecoratorPattern.dir/flags.make
-CMakeFiles/DecoratorPattern.dir/src/main.cpp.o: /home/konstantin/decorator-pattern-cpp/src/main.cpp
-CMakeFiles/DecoratorPattern.dir/src/main.cpp.o: CMakeFiles/DecoratorPattern.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/konstantin/decorator-pattern-cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/DecoratorPattern.dir/src/main.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/DecoratorPattern.dir/src/main.cpp.o -MF CMakeFiles/DecoratorPattern.dir/src/main.cpp.o.d -o CMakeFiles/DecoratorPattern.dir/src/main.cpp.o -c /home/konstantin/decorator-pattern-cpp/src/main.cpp
+CMakeFiles/DecoratorPattern.dir/main.cpp.o: CMakeFiles/DecoratorPattern.dir/flags.make
+CMakeFiles/DecoratorPattern.dir/main.cpp.o: /home/konstantin/decorator-pattern-cpp/src/main.cpp
+CMakeFiles/DecoratorPattern.dir/main.cpp.o: CMakeFiles/DecoratorPattern.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/konstantin/decorator-pattern-cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/DecoratorPattern.dir/main.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/DecoratorPattern.dir/main.cpp.o -MF CMakeFiles/DecoratorPattern.dir/main.cpp.o.d -o CMakeFiles/DecoratorPattern.dir/main.cpp.o -c /home/konstantin/decorator-pattern-cpp/src/main.cpp
 
-CMakeFiles/DecoratorPattern.dir/src/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/DecoratorPattern.dir/src/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/konstantin/decorator-pattern-cpp/src/main.cpp > CMakeFiles/DecoratorPattern.dir/src/main.cpp.i
+CMakeFiles/DecoratorPattern.dir/main.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/DecoratorPattern.dir/main.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/konstantin/decorator-pattern-cpp/src/main.cpp > CMakeFiles/DecoratorPattern.dir/main.cpp.i
 
-CMakeFiles/DecoratorPattern.dir/src/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/DecoratorPattern.dir/src/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/konstantin/decorator-pattern-cpp/src/main.cpp -o CMakeFiles/DecoratorPattern.dir/src/main.cpp.s
+CMakeFiles/DecoratorPattern.dir/main.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/DecoratorPattern.dir/main.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/konstantin/decorator-pattern-cpp/src/main.cpp -o CMakeFiles/DecoratorPattern.dir/main.cpp.s
 
 # Object files for target DecoratorPattern
 DecoratorPattern_OBJECTS = \
-"CMakeFiles/DecoratorPattern.dir/src/main.cpp.o"
+"CMakeFiles/DecoratorPattern.dir/main.cpp.o"
 
 # External object files for target DecoratorPattern
 DecoratorPattern_EXTERNAL_OBJECTS =
 
-DecoratorPattern: CMakeFiles/DecoratorPattern.dir/src/main.cpp.o
+DecoratorPattern: CMakeFiles/DecoratorPattern.dir/main.cpp.o
 DecoratorPattern: CMakeFiles/DecoratorPattern.dir/build.make
 DecoratorPattern: CMakeFiles/DecoratorPattern.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/konstantin/decorator-pattern-cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable DecoratorPattern"
@@ -105,6 +105,6 @@ CMakeFiles/DecoratorPattern.dir/clean:
 .PHONY : CMakeFiles/DecoratorPattern.dir/clean
 
 CMakeFiles/DecoratorPattern.dir/depend:
-	cd /home/konstantin/decorator-pattern-cpp/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/konstantin/decorator-pattern-cpp /home/konstantin/decorator-pattern-cpp /home/konstantin/decorator-pattern-cpp/build /home/konstantin/decorator-pattern-cpp/build /home/konstantin/decorator-pattern-cpp/build/CMakeFiles/DecoratorPattern.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/konstantin/decorator-pattern-cpp/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/konstantin/decorator-pattern-cpp/src /home/konstantin/decorator-pattern-cpp/src /home/konstantin/decorator-pattern-cpp/build /home/konstantin/decorator-pattern-cpp/build /home/konstantin/decorator-pattern-cpp/build/CMakeFiles/DecoratorPattern.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/DecoratorPattern.dir/depend
 

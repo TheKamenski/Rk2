@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/konstantin/decorator-pattern-cpp/src/main.cpp" "CMakeFiles/DecoratorPattern.dir/src/main.cpp.o" "gcc" "CMakeFiles/DecoratorPattern.dir/src/main.cpp.o.d"
+  "/home/konstantin/decorator-pattern-cpp/src/main.cpp" "CMakeFiles/DecoratorPattern.dir/main.cpp.o" "gcc" "CMakeFiles/DecoratorPattern.dir/main.cpp.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.
