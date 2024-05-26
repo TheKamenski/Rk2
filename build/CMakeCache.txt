@@ -222,7 +222,7 @@ DecoratorPattern_BINARY_DIR:STATIC=/home/konstantin/decorator-pattern-cpp/build
 DecoratorPattern_IS_TOP_LEVEL:STATIC=ON
 
 //Value Computed by CMake
-DecoratorPattern_SOURCE_DIR:STATIC=/home/konstantin/decorator-pattern-cpp/src
+DecoratorPattern_SOURCE_DIR:STATIC=/home/konstantin/decorator-pattern-cpp
 
 
 ########################
@@ -311,7 +311,7 @@ CMAKE_GENERATOR_PLATFORM:INTERNAL=
 CMAKE_GENERATOR_TOOLSET:INTERNAL=
 //Source directory with the top level CMakeLists.txt file for this
 // project
-CMAKE_HOME_DIRECTORY:INTERNAL=/home/konstantin/decorator-pattern-cpp/src
+CMAKE_HOME_DIRECTORY:INTERNAL=/home/konstantin/decorator-pattern-cpp
 //Install .so files without execute permission.
 CMAKE_INSTALL_SO_NO_EXE:INTERNAL=0
 //ADVANCED property for variable: CMAKE_LINKER
